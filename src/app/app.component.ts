@@ -6,5 +6,10 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Angular Connect - Material workshop';
+
+  links = [
+    {label: 'Flights', path: 'flights'},
+    {label: 'Hotels', path: 'hotels'},
+  ];
+
 }

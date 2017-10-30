@@ -8,10 +8,19 @@ import {CommonModule} from '@angular/common';
 import {AppComponent} from './app.component';
 import {FlightDataService} from './flights/flight-data.service';
 import {MaterialModule} from './material.module';
+import {FlightsComponent} from './flights/flights.component';
+import {HotelsComponent} from './hotels/hotels.component';
+import {AppRoutingModule} from './app.routing';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FlightsComponent,
+    HotelsComponent
+  ],
+  entryComponents: [
+    FlightsComponent,
+    HotelsComponent
   ],
   imports: [
     BrowserModule,
@@ -19,6 +28,7 @@ import {MaterialModule} from './material.module';
     CommonModule,
     FlexLayoutModule,
     MaterialModule,
+    AppRoutingModule,
   ],
   providers: [FlightDataService],
   bootstrap: [AppComponent]
