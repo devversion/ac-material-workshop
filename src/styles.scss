@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import '~@angular/material/_theming';
+
+$primary: mat-palette($mat-blue);
+$accent: mat-palette($mat-orange);
+
+$light-theme: mat-light-theme($primary, $accent);
+
+@include mat-core();
+@include angular-material-theme($light-theme);
+
+body {
+  margin: 0;
+  color: rgba(0, 0, 0, 78);
+  font-family: Roboto, Arial, sans-serif;
+}
