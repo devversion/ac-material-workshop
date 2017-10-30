@@ -18,6 +18,9 @@ import {
 
 import {AppComponent} from './app.component';
 import {FlightDataService} from './flights/flight-data.service';
+import {FlightsComponent} from './flights/flights.component';
+import {HotelsComponent} from './hotels/hotels.component';
+import {AppRoutingModule} from './app.routing';
 
 @NgModule({
   exports: [
@@ -36,13 +39,20 @@ export class AppMaterialModule {}
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FlightsComponent,
+    HotelsComponent
+  ],
+  entryComponents: [
+    FlightsComponent,
+    HotelsComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     CommonModule,
     FlexLayoutModule,
+    AppRoutingModule,
     AppMaterialModule,
   ],
   providers: [FlightDataService],
