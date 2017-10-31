@@ -5,10 +5,10 @@
     <mat-card-content>
       <p>Find your perfect flight on Angular Flights!</p>
 
-      <form>
+      <form [formGroup]="formGroup">
 
         <mat-form-field>
-          <mat-select placeholder="Origin">
+          <mat-select placeholder="Origin" formControlName="origin">
             <mat-option *ngFor="let airport of airports" [value]="airport">
               {{airport.name }} ({{airport.short}})
             </mat-option>
@@ -16,7 +16,7 @@
         </mat-form-field>
 
         <mat-form-field>
-          <mat-select placeholder="Destination">
+          <mat-select placeholder="Destination" formControlName="destination">
             <mat-option *ngFor="let airport of airports" [value]="airport">
               {{airport.name }} ({{airport.short}})
             </mat-option>
@@ -24,12 +24,24 @@
         </mat-form-field>
 
         <mat-form-field class="date-input">
-          <input matInput placeholder="Departure">
+          <input matInput placeholder="Departure" formControlName="departure"
+                 [matDatepicker]="departurePicker" [min]="todayDate">
+
+          <mat-datepicker-toggle matSuffix [for]="departurePicker"></mat-datepicker-toggle>
+          <mat-datepicker #departurePicker></mat-datepicker>
         </mat-form-field>
 
         <mat-form-field class="date-input">
-          <input matInput placeholder="Return">
+          <input matInput placeholder="Return" formControlName="return"
+                 [matDatepicker]="returnPicker" [min]="todayDate">
+
+          <mat-datepicker-toggle matSuffix [for]="returnPicker"></mat-datepicker-toggle>
+          <mat-datepicker #returnPicker></mat-datepicker>
         </mat-form-field>
+
+        <button mat-button color="primary" type="submit" [disabled]="formGroup.invalid">
+          Search
+        </button>
 
       </form>
 
