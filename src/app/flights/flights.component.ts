@@ -4,4 +4,12 @@ import {Component} from '@angular/core';
   templateUrl: './flights.component.html',
   styleUrls: ['./flights.component.scss']
 })
-export class FlightsComponent {}
+export class FlightsComponent {
+
+  airports = [
+    { name: 'London', short: 'LHR' },
+    { name: 'Munich', short: 'MUC' },
+    { name: 'Tel Aviv', short: 'TLV'}
+  ];
+
+}
