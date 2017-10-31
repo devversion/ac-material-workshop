@@ -4,6 +4,7 @@ import {NgModule} from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {CommonModule} from '@angular/common';
+import {ReactiveFormsModule} from '@angular/forms';
 import {
   MatButtonModule,
   MatCardModule,
@@ -54,6 +55,7 @@ export class AppMaterialModule {}
     FlexLayoutModule,
     AppRoutingModule,
     AppMaterialModule,
+    ReactiveFormsModule
   ],
   providers: [FlightDataService],
   bootstrap: [AppComponent]
