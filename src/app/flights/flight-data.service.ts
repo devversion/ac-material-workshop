@@ -22,8 +22,10 @@ export interface FlightResult {
 export interface FlightInfo {
   airline: string;
   departure: Date;
+  arrival: Date;
   duration: number;
   terminal: string;
+  price: number;
 }
 
 @Injectable()
@@ -58,8 +60,12 @@ export class FlightDataService {
     const departure = this.createRandomDate(date);
     const airline = this.airlines[Math.round((Math.random() * 10)) % this.airlines.length];
     const terminal = `Terminal ${Math.round(1 + Math.random() * 10 % 5)}`;
+    const price = Math.round(Math.random() * 100);
+    const arrival = new Date(departure);
 
-    return Observable.of({duration, departure, terminal, airline});
+    arrival.setMilliseconds(duration);
+
+    return Observable.of({duration, departure, arrival, terminal, airline, price});
   }
 
   private createRandomDate(date: Date) {
