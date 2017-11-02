@@ -1,4 +1,4 @@
-<div fxLayout="row" fxLayoutAlign="center">
+<div fxLayout="column">
 
   <mat-card>
     <h3 matCardTitle>Flights</h3>
@@ -48,6 +48,20 @@
   </mat-card>
 
   <div *ngIf="formGroup.valid && (flights | async) as flights">
-    {{ flights.departure | json }}
+    <mat-expansion-panel *ngFor="let flight of flights.departure">
+      <mat-expansion-panel-header>
+        <mat-panel-title>{{flight.price}}$</mat-panel-title>
+
+        <mat-panel-description fxLayout="row" fxLayoutAlign="space-between">
+          <span>{{flight.airline}}</span>
+          <div>
+            <span>{{flight.departure | date:'shortTime' }}</span>
+            <span> - </span>
+            <span>{{flight.arrival | date:'shortTime' }}</span>
+          </div>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <span>Leaving from {{flight.terminal}}</span>
+    </mat-expansion-panel>
   </div>
 </div>
