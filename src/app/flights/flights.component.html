@@ -5,7 +5,7 @@
     <mat-card-content>
       <p>Find your perfect flight on Angular Flights!</p>
 
-      <form [formGroup]="formGroup">
+      <form [formGroup]="formGroup" (ngSubmit)="loadFlights()">
 
         <mat-form-field>
           <mat-select placeholder="Origin" formControlName="origin">
@@ -44,7 +44,10 @@
         </button>
 
       </form>
-
     </mat-card-content>
   </mat-card>
+
+  <div *ngIf="formGroup.valid && (flights | async) as flights">
+    {{ flights.departure | json }}
+  </div>
 </div>
