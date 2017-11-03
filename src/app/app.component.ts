@@ -12,4 +12,10 @@ export class AppComponent {
     {label: 'Hotels', path: 'hotels'},
   ];
 
+  rtl = false;
+
+  toggleRtl() {
+    this.rtl = !this.rtl;
+  }
+
 }

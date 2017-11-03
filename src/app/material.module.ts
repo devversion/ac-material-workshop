@@ -12,6 +12,8 @@ import {
   MatToolbarModule
 } from '@angular/material';
 
+import {BidiModule} from '@angular/cdk/bidi';
+
 @NgModule({
   exports: [
     MatButtonModule,
@@ -24,6 +26,7 @@ import {
     MatSelectModule,
     MatNativeDateModule,
     MatIconModule,
+    BidiModule
   ]
 })
 export class MaterialModule {}

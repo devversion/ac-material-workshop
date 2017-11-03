@@ -12,12 +12,15 @@ import {MaterialModule} from './material.module';
 import {FlightsComponent} from './flights/flights.component';
 import {HotelsComponent} from './hotels/hotels.component';
 import {AppRoutingModule} from './app.routing';
+import {BidiModule} from '@angular/cdk/bidi';
+import {BidiIconDirective} from './bidi-icon/bidi-icon.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     FlightsComponent,
-    HotelsComponent
+    HotelsComponent,
+    BidiIconDirective,
   ],
   entryComponents: [
     FlightsComponent,

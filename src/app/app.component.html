@@ -1,14 +1,20 @@
-<div class="mat-elevation-z2">
-  <mat-toolbar color="primary">Angular Flights</mat-toolbar>
+<div [dir]="rtl ? 'rtl' : 'ltr'">
+  <div class="mat-elevation-z2">
+    <mat-toolbar color="primary">Angular Flights</mat-toolbar>
 
-  <nav mat-tab-nav-bar backgroundColor="primary">
-    <a mat-tab-link *ngFor="let link of links"
-       [routerLink]="link.path" [active]="route.isActive" routerLinkActive #route="routerLinkActive">
-      <span>{{link.label}}</span>
-    </a>
-  </nav>
-</div>
+    <nav mat-tab-nav-bar backgroundColor="primary">
+      <a mat-tab-link *ngFor="let link of links"
+         [routerLink]="link.path" [active]="route.isActive" routerLinkActive #route="routerLinkActive">
+        <span>{{link.label}}</span>
+      </a>
+    </nav>
+  </div>
 
-<div class="app-content">
-  <router-outlet></router-outlet>
+  <div class="app-content">
+    <router-outlet></router-outlet>
+  </div>
+
+  <button mat-fab class="rtl-fab-button" (click)="toggleRtl()">
+    <mat-icon>compare_arrows</mat-icon>
+  </button>
 </div>
