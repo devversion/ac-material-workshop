@@ -23,6 +23,7 @@ import {FlightDataService} from './flights/flight-data.service';
 import {FlightsComponent} from './flights/flights.component';
 import {HotelsComponent} from './hotels/hotels.component';
 import {AppRoutingModule} from './app.routing';
+import { BidiIconDirective } from './bidi-icon.directive';
 
 @NgModule({
   exports: [
@@ -44,7 +45,8 @@ export class AppMaterialModule {}
   declarations: [
     AppComponent,
     FlightsComponent,
-    HotelsComponent
+    HotelsComponent,
+    BidiIconDirective
   ],
   entryComponents: [
     FlightsComponent,
