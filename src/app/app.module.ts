@@ -14,7 +14,8 @@ import {
   MatNativeDateModule,
   MatSelectModule,
   MatTabsModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatIconModule
 } from '@angular/material';
 
 import {AppComponent} from './app.component';
@@ -34,6 +35,7 @@ import {AppRoutingModule} from './app.routing';
     MatTabsModule,
     MatSelectModule,
     MatNativeDateModule,
+    MatIconModule
   ]
 })
 export class AppMaterialModule {}
