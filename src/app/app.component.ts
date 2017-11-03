@@ -6,6 +6,7 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  rtl = false;
 
   links = [
     {label: 'Flights', path: 'flights'},
