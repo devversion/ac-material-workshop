@@ -3,7 +3,7 @@
   justify-content: center;
 }
 
-.mat-expansion-panel {
+.mat-expansion-panel, .mat-card {
   margin: 8px 0;
 }
 
@@ -13,4 +13,8 @@
 
 .date-input {
   width: 120px;
+}
+
+.flight-arrow {
+  padding: 0 12px;
 }

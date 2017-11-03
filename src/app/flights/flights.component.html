@@ -48,6 +48,14 @@
   </mat-card>
 
   <div *ngIf="formGroup.valid && (flights | async) as flights">
+    <mat-card>
+      <mat-card-title fxLayout="row" fxLayoutAlign="center center">
+
+        <h2>{{formGroup.value.origin.short}}</h2>
+        <mat-icon class="flight-arrow">arrow_forward</mat-icon>
+        <h2>{{formGroup.value.destination.short}}</h2>
+      </mat-card-title>
+    </mat-card>
     <mat-expansion-panel *ngFor="let flight of flights.departure">
       <mat-expansion-panel-header>
         <mat-panel-title>{{flight.price}}$</mat-panel-title>
