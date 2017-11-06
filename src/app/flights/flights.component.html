@@ -47,7 +47,7 @@
     </mat-card-content>
   </mat-card>
 
-  <div *ngIf="formGroup.valid && (flights | async) as flights">
+  <div *ngIf="formGroup.valid && (flights | async) as flights" @results>
     <mat-card>
       <mat-card-title fxLayout="row" fxLayoutAlign="center center">
 
